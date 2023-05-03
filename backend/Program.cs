@@ -1,3 +1,5 @@
+using backend;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -21,5 +23,10 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+
+var g = ReadAutobahndaten.Read("graph_bab.xml"); 
+
+
 
 app.Run();

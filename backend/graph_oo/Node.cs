@@ -10,6 +10,11 @@ public class Node
         get => _outgoingEdges;  
     }
 
+    public void AddOutgoingEdge(Edge edge)
+    {
+        _outgoingEdges.Add(edge); 
+    }
+
     public Node(string name)
     {
         Name = name;
