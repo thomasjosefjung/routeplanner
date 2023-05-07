@@ -1,3 +1,4 @@
+using System.Globalization;
 using System.Xml;
 using graph_oo;
 
@@ -31,6 +32,25 @@ public class ReadAutobahndaten
                 Node node = new Node(nodekey); 
                 nodes.Add(nodekey, node); 
                 graph.AddNode(node); 
+
+                foreach(var dataField in childElement.ChildNodes)
+                {
+                    var dataFieldElement = dataField as XmlElement; 
+
+                    if (dataFieldElement.GetAttribute("key") == "lat")
+                    {
+                        float lat = float.Parse(dataFieldElement.InnerText, CultureInfo.InvariantCulture); 
+                        node.Latitude = lat; 
+                        continue; 
+                    }
+
+                    if (dataFieldElement.GetAttribute("key") == "lon")
+                    {
+                        float lon = float.Parse(dataFieldElement.InnerText, CultureInfo.InvariantCulture); 
+                        node.Longitude = lon; 
+                        continue; 
+                    }
+                }
                 continue; 
             }
 

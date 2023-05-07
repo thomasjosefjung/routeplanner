@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
+<?xml version="1.0" encoding="utf-8"?>
 <graph id="Autobahnen">
 <node id="HEILIGENHAFEN - MITTE (A 1)"><data key="lat">54.3584108</data><data key="lon">10.9602165</data></node>
 <node id="GREMERSDORF (A 1)"><data key="lat">54.3292265</data><data key="lon">10.9324284</data></node>
@@ -2366,8 +2366,8 @@
 <node id="HILDRIZHAUSEN (A 81)"><data key="lat">48.6467693</data><data key="lon">8.9415391</data></node>
 <node id="GÄRTRINGEN"><data key="lat">48.6298379</data><data key="lon">8.9148106</data></node>
 <node id="HERRENBERG (A 81)"><data key="lat">48.5777632</data><data key="lon">8.8997311</data></node>
-<node id="KREUZ ROTTENBURG"><data key="lat">48.5777632</data><data key="lon">8.8997311</data></node>
-<node id="HORB (A 81)"><data key="lat">48.5777632</data><data key="lon">8.8997311</data></node>
+<node id="KREUZ ROTTENBURG"><data key="lat">48.502821</data><data key="lon">8.842248</data></node>
+<node id="HORB (A 81)"><data key="lat">48.430460</data><data key="lon">8.746871</data></node>
 <node id="EMPFINGEN (A 81)"><data key="lat">48.3853603</data><data key="lon">8.7254827</data></node>
 <node id="SULZ (A 81)"><data key="lat">48.3853603</data><data key="lon">8.7254827</data></node>
 <node id="OBERNDORF (A 81)"><data key="lat">48.3853603</data><data key="lon">8.7254827</data></node>

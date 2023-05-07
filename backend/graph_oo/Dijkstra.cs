@@ -16,26 +16,37 @@ public class Dijkstra
             distanceMap.Add(node, float.MaxValue);
         }
 
-        while (distanceMap.Count > 0)
+        distanceMap[from] = 0.0f; 
+
+        bool foundTarget = false; 
+
+        while (distanceMap.Count > 0 && !foundTarget)
         {
             (Node node, float dist) = GetLeastDistanceNode(distanceMap);
             distanceMap.Remove(node);
 
             foreach (var edge in node.OutgoingEdges)
             {
-                predecessor[edge.To] = node; 
-                distanceMap[edge.To] = dist + edge.Weight; 
+                if (distanceMap.ContainsKey(edge.To))
+                {
+                    predecessor[edge.To] = node; 
+                    distanceMap[edge.To] = dist + edge.Weight; 
+
+                    if (edge.To == To)
+                    {
+                        foundTarget = true; 
+                    }
+                }
             }
         }
 
         var result = new List<Node>();
-        result.Prepend(To);
         Node? next = To;
 
         // erstelle pfad: 
         while (next != null)
         {
-            result.Prepend(next); 
+            result.Insert(0, next); 
             next = predecessor[next]; 
         }
 
@@ -49,7 +60,7 @@ public class Dijkstra
 
         foreach (var kvp in distanceMap)
         {
-            if (kvp.Value < currentLeastDist)
+            if (kvp.Value <= currentLeastDist)
             {
                 currentLeastNode = kvp.Key;
                 currentLeastDist = kvp.Value;

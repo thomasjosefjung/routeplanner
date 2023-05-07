@@ -1,4 +1,5 @@
 using backend;
+using graph_oo;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -27,6 +28,34 @@ app.MapControllers();
 
 var g = ReadAutobahndaten.Read("graph_bab.xml"); 
 
+var started = DateTime.Now; 
 
+var wilnsdorf = g.FindNode("WILNSDORF (A 45)"); 
+var herrenberg = g.FindNode("HERRENBERG (A 81)"); 
+var rottenburg = g.FindNode("KREUZ ROTTENBURG"); 
+
+// Console.WriteLine("Dist: "+wilnsdorf.GetDistanceTo(herrenberg)); 
+// Console.WriteLine("Dist: "+wilnsdorf.GetDistanceTo(rottenburg)); 
+
+var p = Dijkstra.GetShortestPath(
+    g, 
+    wilnsdorf, 
+    herrenberg); 
+
+Console.WriteLine( (DateTime.Now - started).TotalMilliseconds); 
+
+foreach(var stop in p)
+{
+    Console.WriteLine(stop.Name); 
+}
+
+started = DateTime.Now; 
+var p2 = AStar.FindShortestPath(g, wilnsdorf, herrenberg); 
+Console.WriteLine( (DateTime.Now - started).TotalMilliseconds); 
+
+foreach(var stop in p2)
+{
+    Console.WriteLine(stop.Name); 
+}
 
 app.Run();

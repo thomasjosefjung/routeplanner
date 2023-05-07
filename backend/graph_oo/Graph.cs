@@ -2,20 +2,25 @@ namespace graph_oo;
 
 public class Graph
 {
-    public List<Node> GetNodesFlatClone()
+    // public List<Node> GetNodesFlatClone()
+    // {
+    //     return new List<Node>(_nodes.Values); 
+    // }
+
+    // public List<Edge> GetEdgesFlatClone()
+    // {
+    //     return new List<Edge>(_edges); 
+    // }
+
+    public Node FindNode(string id)
     {
-        return new List<Node>(_nodes); 
+        return _nodes[id]; 
     }
 
-    public List<Edge> GetEdgesFlatClone()
-    {
-        return new List<Edge>(_edges); 
-    }
-
-    private List<Node> _nodes = new List<Node>();
+    private Dictionary<string, Node> _nodes = new Dictionary<string, Node>();
     public IEnumerable<Node> Nodes
     {
-        get => _nodes;
+        get => _nodes.Values;
     }
     private List<Edge> _edges = new List<Edge>();
     public IEnumerable<Edge> Edges
@@ -25,7 +30,7 @@ public class Graph
 
     public void AddNode(Node node)
     {
-        _nodes.Add(node);
+        _nodes.Add(node.Name, node);
     }
 
     public void AddEdge(Edge edge)
