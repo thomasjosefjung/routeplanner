@@ -5,7 +5,7 @@ namespace graph_oo
 {
     public class AStar
     {
-        public static List<Node> FindShortestPath(Graph graph, Node start, Node goal)
+        public static List<Node>? FindShortestPath(Graph graph, Node start, Node goal)
         {
             var closedSet = new HashSet<Node>();
             var openSet = new HashSet<Node> { start };
@@ -20,7 +20,7 @@ namespace graph_oo
             while (openSet.Count > 0)
             {
                 // Get the node in openSet with lowest fScore
-                Node current = null;
+                Node? current = null;
                 float lowestScore = float.MaxValue;
                 foreach (var node in openSet)
                 {

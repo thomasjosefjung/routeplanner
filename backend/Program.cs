@@ -26,36 +26,38 @@ app.UseAuthorization();
 app.MapControllers();
 
 
-var g = ReadAutobahndaten.Read("graph_bab.xml"); 
+// var g = ReadAutobahndaten.Read("graph_bab.xml"); 
 
-var started = DateTime.Now; 
+// var started = DateTime.Now; 
 
-var wilnsdorf = g.FindNode("WILNSDORF (A 45)"); 
-var herrenberg = g.FindNode("HERRENBERG (A 81)"); 
-var rottenburg = g.FindNode("KREUZ ROTTENBURG"); 
+// var wilnsdorf = g.FindNode("WILNSDORF (A 45)"); 
+// var herrenberg = g.FindNode("HERRENBERG (A 81)"); 
+// var rottenburg = g.FindNode("KREUZ ROTTENBURG"); 
 
-// Console.WriteLine("Dist: "+wilnsdorf.GetDistanceTo(herrenberg)); 
-// Console.WriteLine("Dist: "+wilnsdorf.GetDistanceTo(rottenburg)); 
+// // Console.WriteLine("Dist: "+wilnsdorf.GetDistanceTo(herrenberg)); 
+// // Console.WriteLine("Dist: "+wilnsdorf.GetDistanceTo(rottenburg)); 
 
-var p = Dijkstra.GetShortestPath(
-    g, 
-    wilnsdorf, 
-    herrenberg); 
+// var p = Dijkstra.GetShortestPath(
+//     g, 
+//     wilnsdorf, 
+//     herrenberg); 
 
-Console.WriteLine( (DateTime.Now - started).TotalMilliseconds); 
+// Console.WriteLine( "Time Dijkstra: "+(DateTime.Now - started).TotalMilliseconds); 
 
-foreach(var stop in p)
-{
-    Console.WriteLine(stop.Name); 
-}
+// foreach(var stop in p)
+// {
+//     Console.WriteLine(stop.Name); 
+// }
 
-started = DateTime.Now; 
-var p2 = AStar.FindShortestPath(g, wilnsdorf, herrenberg); 
-Console.WriteLine( (DateTime.Now - started).TotalMilliseconds); 
+// started = DateTime.Now; 
+// var p2 = AStar.FindShortestPath(g, wilnsdorf, herrenberg); 
+// _ = p2 ?? throw new NullReferenceException(); 
 
-foreach(var stop in p2)
-{
-    Console.WriteLine(stop.Name); 
-}
+// Console.WriteLine("Time A*: " + (DateTime.Now - started).TotalMilliseconds); 
+
+// foreach(var stop in p2)
+// {
+//     Console.WriteLine(stop.Name); 
+// }
 
 app.Run();

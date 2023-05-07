@@ -2,10 +2,24 @@ using System.Globalization;
 using System.Xml;
 using graph_oo;
 
-namespace backend;
+namespace backend.bab;
 
-public class ReadAutobahndaten
+public class Autobahnen
 {
+    private static Graph? _babsGraph; 
+    public static Graph Graph
+    {
+        get 
+        {
+            if (_babsGraph is null)
+            {
+                _babsGraph = Read("graph_bab.xml"); 
+            }
+
+            return _babsGraph; 
+        }
+    }
+
     public static graph_oo.Graph Read(string filename)
     {
         var graph = new graph_oo.Graph(); 
@@ -17,6 +31,8 @@ public class ReadAutobahndaten
         Dictionary<string, Node> nodes = new Dictionary<string, Node>(); 
 
         var xmlGraph = doc.ChildNodes[1];
+        _ = xmlGraph ?? throw new NullReferenceException(); 
+
         foreach (var child in xmlGraph.ChildNodes)
         {
             XmlElement? childElement = child as XmlElement;
@@ -36,6 +52,7 @@ public class ReadAutobahndaten
                 foreach(var dataField in childElement.ChildNodes)
                 {
                     var dataFieldElement = dataField as XmlElement; 
+                    _ = dataFieldElement ?? throw new NullReferenceException(); 
 
                     if (dataFieldElement.GetAttribute("key") == "lat")
                     {
@@ -62,6 +79,7 @@ public class ReadAutobahndaten
                 foreach(var dataField in childElement.ChildNodes)
                 {
                     var dataFieldElement = dataField as XmlElement; 
+                    _ = dataFieldElement ?? throw new NullReferenceException(); 
 
                     if (dataFieldElement.GetAttribute("key") == "gewicht")
                     {

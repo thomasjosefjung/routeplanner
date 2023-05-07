@@ -2,12 +2,12 @@ namespace graph_oo;
 
 public class Dijkstra
 {
-    public static List<Node> GetShortestPath(
+    public static List<Edge> GetShortestPath(
         Graph graph,
         Node from,
         Node To)
     {
-        Dictionary<Node, Node?> predecessor = new Dictionary<Node, Node?>();
+        Dictionary<Node, Edge?> predecessor = new Dictionary<Node, Edge?>();
         Dictionary<Node, float> distanceMap = new Dictionary<Node, float>();
 
         foreach (var node in graph.Nodes)
@@ -29,7 +29,7 @@ public class Dijkstra
             {
                 if (distanceMap.ContainsKey(edge.To))
                 {
-                    predecessor[edge.To] = node; 
+                    predecessor[edge.To] = edge; 
                     distanceMap[edge.To] = dist + edge.Weight; 
 
                     if (edge.To == To)
@@ -40,14 +40,14 @@ public class Dijkstra
             }
         }
 
-        var result = new List<Node>();
-        Node? next = To;
+        var result = new List<Edge>();
+        Edge? next = predecessor[To];
 
         // erstelle pfad: 
         while (next != null)
         {
             result.Insert(0, next); 
-            next = predecessor[next]; 
+            next = predecessor[next.From]; 
         }
 
         return result;
@@ -71,8 +71,6 @@ public class Dijkstra
 
         return (currentLeastNode, currentLeastDist);
     }
-
-
 }
 
 public class NodeComparer : IComparer<float>
