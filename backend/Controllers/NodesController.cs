@@ -1,5 +1,4 @@
-using backend.bab;
-using graph_oo;
+using backend.models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace backend.Controllers;
@@ -16,12 +15,16 @@ public class NodesController : ControllerBase
     }
 
     [HttpGet]
-    public IEnumerable<string> Get()
+    public IEnumerable<Node> Get()
     {
-        IEnumerable<string> nodeNames = 
-            from node in Autobahnen.Graph.Nodes
-            select node.Name; 
+        var nodes = backend.bab.Autobahnen.Graph.Nodes.Select(graphNode =>
+        {
+            return new backend.models.Node(
+                graphNode.Name,
+                new Coordinates(graphNode.Longitude, graphNode.Latitude)
+            );
+        });
 
-        return nodeNames ?? new string[0]; 
+        return nodes ?? new backend.models.Node[0]; 
     }
 }
