@@ -3805,8 +3805,8 @@
 <edge source="WENDEN (A 4)" target="KREUZ OLPE - SÜD"><data key="A">A 4</data><data key="gewicht">0.5</data></edge>
 <edge source="WENDEN (A 4)" target="KROMBACH (A 4)"><data key="A">A 4</data><data key="gewicht">6</data></edge>
 <edge source="KROMBACH (A 4)" target="WENDEN (A 4)"><data key="A">A 4</data><data key="gewicht">6</data></edge>
-<edge source="KROMBACH (A 4)" target="KIRCHHEIMER DREIECK"><data key="A">A 4</data><data key="gewicht">176</data></edge>
-<edge source="KIRCHHEIMER DREIECK" target="KROMBACH (A 4)"><data key="A">A 4</data><data key="gewicht">176</data></edge>
+<!-- <edge source="KROMBACH (A 4)" target="KIRCHHEIMER DREIECK"><data key="A">A 4</data><data key="gewicht">176</data></edge>
+<edge source="KIRCHHEIMER DREIECK" target="KROMBACH (A 4)"><data key="A">A 4</data><data key="gewicht">176</data></edge> -->
 <edge source="KIRCHHEIMER DREIECK" target="BAD HERSFELD (A 4)"><data key="A">A 4</data><data key="gewicht">10</data></edge>
 <edge source="BAD HERSFELD (A 4)" target="KIRCHHEIMER DREIECK"><data key="A">A 4</data><data key="gewicht">10</data></edge>
 <edge source="BAD HERSFELD (A 4)" target="FRIEDEWALD (A 4)"><data key="A">A 4</data><data key="gewicht">11</data></edge>
@@ -4621,8 +4621,8 @@
 <edge source="WALSHAUSEN (A 8)" target="CONTWIG (A 8)"><data key="A">A 8</data><data key="gewicht">6</data></edge>
 <edge source="WALSHAUSEN (A 8)" target="PIRMASENS (A 8)"><data key="A">A 8</data><data key="gewicht">6</data></edge>
 <edge source="PIRMASENS (A 8)" target="WALSHAUSEN (A 8)"><data key="A">A 8</data><data key="gewicht">6</data></edge>
-<edge source="PIRMASENS (A 8)" target="DREIECK KARLSRUHE"><data key="A">A 8</data><data key="gewicht">200</data></edge>
-<edge source="DREIECK KARLSRUHE" target="PIRMASENS (A 8)"><data key="A">A 8</data><data key="gewicht">200</data></edge>
+<!-- <edge source="PIRMASENS (A 8)" target="DREIECK KARLSRUHE"><data key="A">A 8</data><data key="gewicht">200</data></edge>
+<edge source="DREIECK KARLSRUHE" target="PIRMASENS (A 8)"><data key="A">A 8</data><data key="gewicht">200</data></edge> -->
 <edge source="DREIECK KARLSRUHE" target="KARLSBAD (A 8)"><data key="A">A 8</data><data key="gewicht">5</data></edge>
 <edge source="KARLSBAD (A 8)" target="DREIECK KARLSRUHE"><data key="A">A 8</data><data key="gewicht">5</data></edge>
 <edge source="KARLSBAD (A 8)" target="PFORZHEIM - WEST (A 8)"><data key="A">A 8</data><data key="gewicht">13</data></edge>
@@ -6895,8 +6895,8 @@
 <edge source="WITTLICH - WEST (A 60)" target="LANDSCHEID"><data key="A">A 60</data><data key="gewicht">6</data></edge>
 <edge source="WITTLICH - WEST (A 60)" target="KREUZ WITTLICH"><data key="A">A 60</data><data key="gewicht">3</data></edge>
 <edge source="KREUZ WITTLICH" target="WITTLICH - WEST (A 60)"><data key="A">A 60</data><data key="gewicht">3</data></edge>
-<edge source="KREUZ WITTLICH" target="DREIECK NAHETAL"><data key="A">A 60</data><data key="gewicht">200</data></edge>
-<edge source="DREIECK NAHETAL" target="KREUZ WITTLICH"><data key="A">A 60</data><data key="gewicht">200</data></edge>
+<!-- <edge source="KREUZ WITTLICH" target="DREIECK NAHETAL"><data key="A">A 60</data><data key="gewicht">200</data></edge>
+<edge source="DREIECK NAHETAL" target="KREUZ WITTLICH"><data key="A">A 60</data><data key="gewicht">200</data></edge> -->
 <edge source="DREIECK NAHETAL" target="BINGEN - OST (A 60)"><data key="A">A 60</data><data key="gewicht">3</data></edge>
 <edge source="BINGEN - OST (A 60)" target="DREIECK NAHETAL"><data key="A">A 60</data><data key="gewicht">3</data></edge>
 <edge source="BINGEN - OST (A 60)" target="INGELHEIM - WEST (A 60)"><data key="A">A 60</data><data key="gewicht">6</data></edge>
@@ -7817,8 +7817,8 @@
 <edge source="WOLNZACH (A 93)" target="MAINBURG (A 93)"><data key="A">A 93</data><data key="gewicht">7</data></edge>
 <edge source="WOLNZACH (A 93)" target="DREIECK HOLLEDAU"><data key="A">A 93</data><data key="gewicht">4</data></edge>
 <edge source="DREIECK HOLLEDAU" target="WOLNZACH (A 93)"><data key="A">A 93</data><data key="gewicht">4</data></edge>
-<edge source="DREIECK HOLLEDAU" target="DREIECK INNTAL"><data key="A">A 93</data><data key="gewicht">200</data></edge>
-<edge source="DREIECK INNTAL" target="DREIECK HOLLEDAU"><data key="A">A 93</data><data key="gewicht">200</data></edge>
+<!-- <edge source="DREIECK HOLLEDAU" target="DREIECK INNTAL"><data key="A">A 93</data><data key="gewicht">200</data></edge>
+<edge source="DREIECK INNTAL" target="DREIECK HOLLEDAU"><data key="A">A 93</data><data key="gewicht">200</data></edge> -->
 <edge source="DREIECK INNTAL" target="REISCHENHART (A 93)"><data key="A">A 93</data><data key="gewicht">6</data></edge>
 <edge source="REISCHENHART (A 93)" target="DREIECK INNTAL"><data key="A">A 93</data><data key="gewicht">6</data></edge>
 <edge source="REISCHENHART (A 93)" target="BRANNENBURG (A 93)"><data key="A">A 93</data><data key="gewicht">3</data></edge>

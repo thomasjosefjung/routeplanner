@@ -23,8 +23,10 @@ public class NodesController : ControllerBase
                 graphNode.Name,
                 new Coordinates(graphNode.Longitude, graphNode.Latitude)
             );
+        }).OrderBy(node => {
+            return node.Name;
         });
 
-        return nodes ?? new backend.models.Node[0]; 
+        return nodes; 
     }
 }

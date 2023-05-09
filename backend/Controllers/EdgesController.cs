@@ -17,14 +17,15 @@ public class EdgesController : ControllerBase
     [HttpGet]
     public IEnumerable<Edge> Get()
     {
-        var nodes = backend.bab.Autobahnen.Graph.Nodes.Select(graphNode =>
+        var nodes = backend.bab.Autobahnen.Graph.Edges.Select(edge =>
         {
-            return new backend.models.Node(
-                graphNode.Name,
-                new Coordinates(graphNode.Longitude, graphNode.Latitude)
-            );
+            return new backend.models.Edge
+            {
+                CoordsFrom = new Coordinates(edge.From.Longitude, edge.From.Latitude), 
+                CoordsTo = new Coordinates(edge.To.Longitude, edge.To.Latitude)
+            };
         });
 
-        return nodes ?? new backend.models.Node[0]; 
+        return  nodes ?? new backend.models.Edge[0]; 
     }
 }
