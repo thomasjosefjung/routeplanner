@@ -1,6 +1,6 @@
 async function initialize() 
 {
-    var response = await fetch('https://localhost:7010/api/Nodes');
+    var response = await fetch('/api/Nodes');
     var data = await response.json();
 
     let canv = document.getElementById("canvas"); 
@@ -9,13 +9,12 @@ async function initialize()
     for(let i = 0; i < data.length; i++) {
         let obj = data[i];
 
-        if (obj.name.includes('WILNSDORF'))
+        if (obj.name.includes('MÖNCHENGLADBACH'))
             drawFilledCircle(ctx, obj.coordinates.x, obj.coordinates.y, 5, 'red'); 
-        else if (obj.name.includes('HERRENBERG'))
+        else if (obj.name.includes('STUTTGART'))
             drawFilledCircle(ctx, obj.coordinates.x, obj.coordinates.y,5, 'red'); 
         else 
             drawFilledCircle(ctx, obj.coordinates.x, obj.coordinates.y, 1, 'black'); 
-            
     }
 
     canv.a
