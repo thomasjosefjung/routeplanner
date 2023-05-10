@@ -17,7 +17,7 @@ public class EdgesController : ControllerBase
     [HttpGet]
     public IEnumerable<Edge> Get()
     {
-        var nodes = backend.bab.Autobahnen.Graph.Edges.Select(edge =>
+        var edges = backend.bab.Autobahnen.Graph.Edges.Select(edge =>
         {
             return new backend.models.Edge
             {
@@ -26,6 +26,6 @@ public class EdgesController : ControllerBase
             };
         });
 
-        return  nodes ?? new backend.models.Edge[0]; 
+        return  edges ?? new backend.models.Edge[0]; 
     }
 }

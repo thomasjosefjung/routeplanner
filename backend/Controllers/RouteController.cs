@@ -24,28 +24,36 @@ public class RouteController : ControllerBase
         var path = Dijkstra.GetShortestPath(
             Autobahnen.Graph, nodeFrom, nodeTo); 
 
-        _ = path ?? throw new NullReferenceException(); 
+        _ = path ?? throw new NullReferenceException();
 
+        var edges = path.Select(edge =>
+        {
+            return new models.Edge
+            {
+                CoordsFrom = new models.Coordinates(edge.From.Longitude, edge.From.Latitude),
+                CoordsTo = new models.Coordinates(edge.To.Longitude, edge.To.Latitude)
+            };
+        });
+
+        var nodes = path.Select(edge =>
+        {
+            return new models.Node(
+                edge.To.Name,
+                new models.Coordinates(edge.From.Longitude, edge.To.Latitude));
+        });
+
+        nodes.Prepend(new models.Node(
+                nodeFrom.Name,
+                new models.Coordinates(nodeFrom.Longitude, nodeFrom.Latitude)));
 
         float linearDistance = nodeTo.GetDistanceTo(nodeFrom); 
 
-        IEnumerable<string> nodeNames = path.Select(edge => edge.To.Name); 
-        nodeNames = nodeNames.Prepend(nodeFrom.Name); 
-
-        // IEnumerable<string> nodeNames = 
-        //     from edge in path
-        //     select edge.To.Name; 
-
         float routeDistance = path.Select(edge => edge.Weight).Sum(); 
-
-        // float routeDistance = 
-        //     (from edge in path
-        //     select edge.Weight).Sum(); 
-
 
         return new models.Route
         {
-            Nodes = nodeNames, 
+            Nodes = nodes, 
+            Edges = edges, 
             StraightLineDistance = linearDistance, 
             RouteDistance = routeDistance
         };
