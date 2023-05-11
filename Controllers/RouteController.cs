@@ -21,8 +21,14 @@ public class RouteController : ControllerBase
         var nodeFrom = Autobahnen.Graph.FindNode(from); 
         var nodeTo = Autobahnen.Graph.FindNode(to); 
 
-        var path = Dijkstra.GetShortestPath(
+        var started = DateTime.Now; 
+        // var path = Dijkstra.GetShortestPath(
+        //     Autobahnen.Graph, nodeFrom, nodeTo); 
+
+        var path = AStar.FindShortestPath(
             Autobahnen.Graph, nodeFrom, nodeTo); 
+
+        var computationTime = (DateTime.Now - started).TotalMilliseconds; 
 
         _ = path ?? throw new NullReferenceException();
 
@@ -55,7 +61,8 @@ public class RouteController : ControllerBase
             Nodes = nodes, 
             Edges = edges, 
             StraightLineDistance = linearDistance, 
-            RouteDistance = routeDistance
+            RouteDistance = routeDistance,  
+            ComputationTime = (float)computationTime
         };
     }
 }

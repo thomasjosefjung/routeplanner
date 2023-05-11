@@ -122,6 +122,10 @@ async function trigger_search() {
     var response = await fetch(request);
     route = await response.json();
 
+    document.getElementById("textStraightLineDistance").innerText = route.straightLineDistance+ " km"; 
+    document.getElementById("textRouteDistance").innerText = route.routeDistance +" km"; 
+    document.getElementById("textComputationTime").innerText = route.computationTime + " ms"; 
+
     draw();
     writeRoute();
 }

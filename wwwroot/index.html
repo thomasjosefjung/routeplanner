@@ -44,8 +44,37 @@
         </div>
         <div class="column is-4 m-3">
             <h2 class="title is-4 m-3">Die Route im Detail</h2>
-            <ul id="route_list" class="is-size-7"></ul>
-
+            <div class="m-3">
+                <table class="table">
+                    <tr>
+                        <td>
+                            <p class="is-size-7 has-text-right">Straight line distance: </p>
+                        </td>
+                        <td>
+                            <p class="is-size-7" id="textStraightLineDistance"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="is-size-7 has-text-right">Route distance: </p>
+                        </td>
+                        <td>
+                            <p class="is-size-7" id="textRouteDistance"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="is-size-7 has-text-right">Computation time:</p>
+                        </td>
+                        <td>
+                            <p class="is-size-7" id="textComputationTime"></p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div>
+                <ul id="route_list" class="is-size-7"></ul>
+            </div>
         </div>
     </div>
     <script src="script/main.js"></script>

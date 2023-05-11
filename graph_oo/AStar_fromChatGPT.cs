@@ -5,7 +5,7 @@ namespace graph_oo
 {
     public class AStar
     {
-        public static List<Node>? FindShortestPath(Graph graph, Node start, Node goal)
+        public static List<Edge>? FindShortestPath(Graph graph, Node start, Node goal)
         {
             var closedSet = new HashSet<Node>();
             var openSet = new HashSet<Node> { start };
@@ -79,15 +79,17 @@ namespace graph_oo
             return null;
         }
 
-        private static List<Node> ReconstructPath(Dictionary<Node, Edge> cameFrom, Node current)
+        private static List<Edge> ReconstructPath(Dictionary<Node, Edge> cameFrom, Node current)
         {
-            var path = new List<Node> { current };
+            var path = new List<Edge> { };
+
             while (cameFrom.ContainsKey(current))
             {
                 var edge = cameFrom[current];
-                path.Insert(0, edge.From);
+                path.Insert(0, edge);
                 current = edge.From;
             }
+
             return path;
         }
     }
