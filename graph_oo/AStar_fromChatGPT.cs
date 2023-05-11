@@ -76,7 +76,7 @@ namespace graph_oo
             }
 
             // No path found
-            return null;
+            return new List<Edge>();
         }
 
         private static List<Edge> ReconstructPath(Dictionary<Node, Edge> cameFrom, Node current)

@@ -22,11 +22,11 @@ public class RouteController : ControllerBase
         var nodeTo = Autobahnen.Graph.FindNode(to); 
 
         var started = DateTime.Now; 
-        // var path = Dijkstra.GetShortestPath(
-        //     Autobahnen.Graph, nodeFrom, nodeTo); 
-
         var path = AStar.FindShortestPath(
             Autobahnen.Graph, nodeFrom, nodeTo); 
+
+        // var path = AStar.FindShortestPath(
+        //     Autobahnen.Graph, nodeFrom, nodeTo); 
 
         var computationTime = (DateTime.Now - started).TotalMilliseconds; 
 

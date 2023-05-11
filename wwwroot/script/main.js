@@ -79,7 +79,7 @@ function draw() {
 
     ctx.save();
     ctx.strokeStyle = 'blue';
-    ctx.lineWidth = 4;
+    ctx.lineWidth = 6;
 
     if (route.edges.length > 0) {
         let edge = route.edges[0];

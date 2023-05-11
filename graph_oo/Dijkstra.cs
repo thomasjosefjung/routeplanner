@@ -2,7 +2,7 @@ namespace graph_oo;
 
 public class Dijkstra
 {
-    public static List<Edge> GetShortestPath(
+    public static List<Edge> FindShortestPath(
         Graph graph,
         Node from,
         Node To)
