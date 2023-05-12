@@ -21,62 +21,73 @@
 
     <!-- <body> -->
     <div class="has-background-info">
-        <h1 class="title is-3 has-text-centered p-3 has-text-white">DHBW - BAB Routenplaner</h1>
+        <h1 class="title is-3 mb-3 has-text-centered p-3 has-text-white">DHBW - BAB Routenplaner</h1>
     </div>
+
     <div class="columns">
-        <div class="column is-8 m-3">
-            <h2 class="title is-4 m-3">Start und Ziel</h2>
+        <div class="column is-3">
             <div class="columns">
-                <div class="column is-half">
-                    <div class="select m-3">
+                <div class="column is-full">
+                    <h2 class="title is-4 m-2">Start und Ziel</h2>
+                    <div class="select m-2">
                         <select id="select_from" onchange="trigger_search()" style="width: 100%;"></select>
                     </div>
-                </div>
-                <div class="column is-half">
-                    <div class="select m-3">
+                    <div class="select m-2">
                         <select id="select_to" onchange="trigger_search()" style="width: 100%;"></select>
+                    </div>
+                    <div>
+                        <h2 class="title is-4 m-2">Algorithms</h2>
+                        <div class="select m-2">
+                            <select id="select_algo" onchange="trigger_search()" style="width: 100%;">
+                                <option value="dijkstra">Dijkstra</option>
+                                <option value="astar">A*</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div style="justify-content: center;">
-                <canvas width="1000" height="1000" style="margin: 0px; padding: 0px; width: 100%;" id="canvas"></canvas>
-            </div>
         </div>
-        <div class="column is-4 m-3">
-            <h2 class="title is-4 m-3">Die Route im Detail</h2>
-            <div class="m-3">
-                <table class="table">
-                    <tr>
-                        <td>
-                            <p class="is-size-7 has-text-right">Straight line distance: </p>
-                        </td>
-                        <td>
-                            <p class="is-size-7" id="textStraightLineDistance"></p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <p class="is-size-7 has-text-right">Route distance: </p>
-                        </td>
-                        <td>
-                            <p class="is-size-7" id="textRouteDistance"></p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <p class="is-size-7 has-text-right">Computation time:</p>
-                        </td>
-                        <td>
-                            <p class="is-size-7" id="textComputationTime"></p>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-            <div>
+        <div class="column is-6">
+            <canvas width="1000" height="1000" style="margin: 0px; padding: 0px; width: 100%;" id="canvas"></canvas>
+        </div>
+        <div class="column is-3 ">
+            <h2 class="title is-4 m-2">Die Route im Detail</h2>
+                <div class="m-2">
+                    <table class="table is-fullwidth">
+                        <tr>
+                            <td>
+                                <p class="is-size-7 has-text-right">Straight line distance: </p>
+                            </td>
+                            <td>
+                                <p class="is-size-7" id="textStraightLineDistance"> - </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="is-size-7 has-text-right">Route distance: </p>
+                            </td>
+                            <td>
+                                <p class="is-size-7" id="textRouteDistance"> - </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="is-size-7 has-text-right">Computation time:</p>
+                            </td>
+                            <td>
+                                <p class="is-size-7" id="textComputationTime"> - </p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            <div class="m-2">
                 <ul id="route_list" class="is-size-7"></ul>
             </div>
         </div>
     </div>
+
+
+
     <script src="script/main.js"></script>
 </body>
 

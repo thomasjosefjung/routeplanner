@@ -117,8 +117,9 @@ async function initialize() {
 async function trigger_search() {
     let selectFrom = document.getElementById('select_from');
     let selectTo = document.getElementById('select_to');
+    let selectAlgo = document.getElementById('select_algo');
 
-    let request = new Request(`/api/Route?From=${selectFrom.value}&To=${selectTo.value}`);
+    let request = new Request(`/api/Route?From=${selectFrom.value}&To=${selectTo.value}&algo=${selectAlgo.value}`);
     var response = await fetch(request);
     route = await response.json();
 

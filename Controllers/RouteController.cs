@@ -16,19 +16,33 @@ public class RouteController : ControllerBase
     }
 
     [HttpGet]
-    public models.Route Get(string from, string to)
+    public models.Route Get(string from, string to, string algo)
     {
-        var nodeFrom = Autobahnen.Graph.FindNode(from); 
-        var nodeTo = Autobahnen.Graph.FindNode(to); 
+        var nodeFrom = Autobahnen.Graph.FindNode(from);
+        var nodeTo = Autobahnen.Graph.FindNode(to);
 
-        var started = DateTime.Now; 
-        var path = AStar.FindShortestPath(
-            Autobahnen.Graph, nodeFrom, nodeTo); 
+        var started = DateTime.Now;
+        var path = new List<Edge>();
 
-        // var path = AStar.FindShortestPath(
-        //     Autobahnen.Graph, nodeFrom, nodeTo); 
+        switch (algo)
+        {
+            case ("astar"):
+                {
+                    path = AStar.FindShortestPath(
+                        Autobahnen.Graph, nodeFrom, nodeTo);
+                    break;
+                }
+            default:
+                {
+                    path = Dijkstra.FindShortestPath(
+                       Autobahnen.Graph, nodeFrom, nodeTo);
 
-        var computationTime = (DateTime.Now - started).TotalMilliseconds; 
+                    break; 
+                }
+        }
+
+
+        var computationTime = (DateTime.Now - started).TotalMilliseconds;
 
         _ = path ?? throw new NullReferenceException();
 
@@ -52,16 +66,16 @@ public class RouteController : ControllerBase
                 nodeFrom.Name,
                 new models.Coordinates(nodeFrom.Longitude, nodeFrom.Latitude)));
 
-        float linearDistance = nodeTo.GetDistanceTo(nodeFrom); 
+        float linearDistance = nodeTo.GetDistanceTo(nodeFrom);
 
-        float routeDistance = path.Select(edge => edge.Weight).Sum(); 
+        float routeDistance = path.Select(edge => edge.Weight).Sum();
 
         return new models.Route
         {
-            Nodes = nodes, 
-            Edges = edges, 
-            StraightLineDistance = linearDistance, 
-            RouteDistance = routeDistance,  
+            Nodes = nodes,
+            Edges = edges,
+            StraightLineDistance = linearDistance,
+            RouteDistance = routeDistance,
             ComputationTime = (float)computationTime
         };
     }
