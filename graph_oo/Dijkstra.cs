@@ -29,8 +29,13 @@ public class Dijkstra
             {
                 if (distanceMap.ContainsKey(edge.To))
                 {
-                    predecessor[edge.To] = edge; 
-                    distanceMap[edge.To] = dist + edge.Weight; 
+                    float abstandUeberDiesenWeg = dist + edge.Weight; 
+
+                    if (abstandUeberDiesenWeg < distanceMap[edge.To])
+                    {
+                        predecessor[edge.To] = edge; 
+                        distanceMap[edge.To] = dist + edge.Weight; 
+                    }
 
                     if (edge.To == To)
                     {

@@ -367,7 +367,7 @@
 <node id="PASSAU - SÜD (A 3)"><data key="lat">48.5336588</data><data key="lon">13.4000874</data></node>
 <node id="KREUZ POCKING"><data key="lat">48.5336588</data><data key="lon">13.4000874</data></node>
 <node id="AACHEN - LAURENSBERG (A 4)"><data key="lat">50.8038881</data><data key="lon">6.0769302</data></node>
-<!-- <node id="KREUZ WÜRSELEN"><data key="lat">50.8038881</data><data key="lon">6.0769302</data></node> -->
+<node id="KREUZ WÜRSELEN"><data key="lat">50.799</data><data key="lon">6.14728</data></node>
 <node id="AACHEN - ZENTRUM (A 4)"><data key="lat">50.8042243</data><data key="lon">6.1137183</data></node>
 <node id="KREUZ AACHEN  (Westteil)"><data key="lat">50.8042243</data><data key="lon">6.1137183</data></node>
 <node id="KREUZ AACHEN  (Ostteil)"><data key="lat">50.8042243</data><data key="lon">6.1137183</data></node>
@@ -525,7 +525,7 @@
 <node id="KREUZ WALLDORF"><data key="lat">49.2733168</data><data key="lon">8.6158904</data></node>
 <node id="KRONAU (A 5)"><data key="lat">49.2238036</data><data key="lon">8.6038541</data></node>
 <node id="KREUZ BRUCHSAL"><data key="lat">49.2238036</data><data key="lon">8.6038541</data></node>
-<node id="KREUZ KARLSRUHE - NORD"><data key="lat">49.2238036</data><data key="lon">8.6038541</data></node>
+<node id="KREUZ KARLSRUHE - NORD"><data key="lat">49.015937</data><data key="lon">8.466569</data></node>
 <node id="KARLSRUHE - DURLACH (A 5)"><data key="lat">49.0001622</data><data key="lon">8.4465011</data></node>
 <node id="KARLSRUHE - MITTE (A 5)"><data key="lat">48.9872576</data><data key="lon">8.4365454</data></node>
 <node id="DREIECK KARLSRUHE"><data key="lat">48.9697663</data><data key="lon">8.4321103</data></node>
@@ -669,7 +669,7 @@
 <node id="HAMBURG - BAHRENFELD (A 7)"><data key="lat">53.5527963</data><data key="lon">9.8944643</data></node>
 <node id="HAMBURG - OTHMARSCHEN (A 7)"><data key="lat">53.504399</data><data key="lon">9.988541</data></node>
 <node id="DREIECK HAMBURG - HAFEN"><data key="lat">53.504399</data><data key="lon">9.988541</data></node>
-<node id="KREUZ HAMBURG - SÜDERELBE"><data key="lat">53.4892264</data><data key="lon">9.9394092</data></node>
+<!-- <node id="KREUZ HAMBURG - SÜDERELBE"><data key="lat">53.4892264</data><data key="lon">9.9394092</data></node> -->
 <node id="HAMBURG - MOORBURG (A 7)"><data key="lat">53.4640323</data><data key="lon">9.9562548</data></node>
 <node id="HAMBURG - HEIMFELD (A 7)"><data key="lat">53.504399</data><data key="lon">9.988541</data></node>
 <node id="DREIECK HAMBURG - SÜDWEST"><data key="lat">53.4359406</data><data key="lon">9.9685187</data></node>
@@ -2138,7 +2138,7 @@
 <node id="WÖRTHER KREUZ (A 65)"><data key="lat">49.0394662</data><data key="lon">8.2795868</data></node>
 <node id="HAGENBACH - NORD (A 65)"><data key="lat">49.0394662</data><data key="lon">8.2795868</data></node>
 <node id="HAGENBACH - SÜD (A 65)"><data key="lat">49.0394662</data><data key="lon">8.2795868</data></node>
-<node id="KREUZ KARLSRUHE - NORD"><data key="lat">49.0394662</data><data key="lon">8.2795868</data></node>
+<!-- <node id="KREUZ KARLSRUHE - NORD"><data key="lat">49.0394662</data><data key="lon">8.2795868</data></node> -->
 <node id="WIESBADEN - FRAUENSTEIN (A 66)"><data key="lat">50.0498595</data><data key="lon">8.1759233</data></node>
 <node id="SCHIERSTEINER KREUZ"><data key="lat">50.0524445</data><data key="lon">8.218298</data></node>
 <node id="WIESBADEN - BIEBRICH (A 66)"><data key="lat">50.0522682</data><data key="lon">8.2468468</data></node>
@@ -2825,11 +2825,11 @@
 <node id="LANGENFELD - REUSRATH (A 542)"><data key="lat">51.0933207</data><data key="lon">6.9519589</data></node>
 <node id="LANGENFELD - IMMIGRATH (A 542)"><data key="lat">51.1086609</data><data key="lon">6.9744379</data></node>
 <node id="DREIECK LANGENFELD"><data key="lat">51.11</data><data key="lon">6.986</data></node>
-<node id="AACHEN  - EUROPAPLATZ (A 542)"><data key="lat">50.5168044</data><data key="lon">10.0119099</data></node>
-<node id="AACHEN  - ROTHE ERDE (A 542)"><data key="lat">50.5168044</data><data key="lon">10.0119099</data></node>
-<node id="WÜRSELEN (A 542)"><data key="lat">50.5168044</data><data key="lon">10.0119099</data></node>
-<node id="KREUZ AACHEN  (Westteil)"><data key="lat">50.5168044</data><data key="lon">10.0119099</data></node>
-<node id="KREUZ AACHEN  (Ostteil)"><data key="lat">50.5168044</data><data key="lon">10.0119099</data></node>
+<node id="AACHEN  - EUROPAPLATZ (A 542)"><data key="lat">50.780311</data><data key="lon">6.108027</data></node>
+<node id="AACHEN  - ROTHE ERDE (A 542)"><data key="lat">50.787590</data><data key="lon">6.129049</data></node>
+<node id="WÜRSELEN (A 542)"><data key="lat">50.5168044</data><data key="lon">6.0119099</data></node>
+<node id="KREUZ AACHEN  (Westteil)"><data key="lat">50.5168044</data><data key="lon">6.0119099</data></node>
+<node id="KREUZ AACHEN  (Ostteil)"><data key="lat">50.5168044</data><data key="lon">6.0119099</data></node>
 <node id="KREUZ BLIESHEIM"><data key="lat">50.7749259</data><data key="lon">6.8290428</data></node>
 <node id="BRÜHL - SÜD (A 553)"><data key="lat">50.7962259</data><data key="lon">6.8699126</data></node>
 <node id="BRÜHL / BORNHEIM (A 553)"><data key="lat">50.803423</data><data key="lon">6.9048392</data></node>
@@ -3727,12 +3727,18 @@
 <edge source="PASSAU - SÜD (A 3)" target="PASSAU - MITTE (A 3)"><data key="A">A 3</data><data key="gewicht">3</data></edge>
 <edge source="PASSAU - SÜD (A 3)" target="KREUZ POCKING"><data key="A">A 3</data><data key="gewicht">12</data></edge>
 <edge source="KREUZ POCKING" target="PASSAU - SÜD (A 3)"><data key="A">A 3</data><data key="gewicht">12</data></edge>
-<!-- <edge source="AACHEN - LAURENSBERG (A 4)" target="KREUZ WÜRSELEN"><data key="A">A 4</data><data key="gewicht">1</data></edge>
-<edge source="KREUZ WÜRSELEN" target="AACHEN - LAURENSBERG (A 4)"><data key="A">A 4</data><data key="gewicht">1</data></edge>
-<edge source="KREUZ WÜRSELEN" target="AACHEN - ZENTRUM (A 4)"><data key="A">A 4</data><data key="gewicht">1</data></edge>
-<edge source="AACHEN - ZENTRUM (A 4)" target="KREUZ WÜRSELEN"><data key="A">A 4</data><data key="gewicht">1</data></edge> -->
+
+<edge source="AACHEN - LAURENSBERG (A 4)" target="AACHEN - ZENTRUM (A 4)"><data key="A">A 4</data><data key="gewicht">1</data></edge>
+<edge source="AACHEN - ZENTRUM (A 4)" target="AACHEN - LAURENSBERG (A 4)"><data key="A">A 4</data><data key="gewicht">1</data></edge>
+
+<!-- <edge source="KREUZ WÜRSELEN" target="AACHEN - LAURENSBERG (A 4)"><data key="A">A 4</data><data key="gewicht">1</data></edge>
+<edge source="KREUZ WÜRSELEN" target="AACHEN - ZENTRUM (A 4)"><data key="A">A 4</data><data key="gewicht">1</data></edge> -->
+
+<!-- <edge source="AACHEN - ZENTRUM (A 4)" target="KREUZ WÜRSELEN"><data key="A">A 4</data><data key="gewicht">1</data></edge> --> -->
+
 <edge source="AACHEN - ZENTRUM (A 4)" target="KREUZ AACHEN  (Westteil)"><data key="A">A 4</data><data key="gewicht">4</data></edge>
 <edge source="KREUZ AACHEN  (Westteil)" target="AACHEN - ZENTRUM (A 4)"><data key="A">A 4</data><data key="gewicht">4</data></edge>
+
 <edge source="KREUZ AACHEN  (Westteil)" target="KREUZ AACHEN  (Ostteil)"><data key="A">A 4</data><data key="gewicht">0.5</data></edge>
 <edge source="KREUZ AACHEN  (Ostteil)" target="KREUZ AACHEN  (Westteil)"><data key="A">A 4</data><data key="gewicht">0.5</data></edge>
 <edge source="KREUZ AACHEN  (Ostteil)" target="ESCHWEILER - WEST (A 4)"><data key="A">A 4</data><data key="gewicht">5</data></edge>
@@ -8465,10 +8471,10 @@
 <edge source="AACHEN  - EUROPAPLATZ (A 542)" target="DREIECK LANGENFELD"><data key="A">A 542</data><data key="gewicht">0</data></edge> -->
 <edge source="AACHEN  - EUROPAPLATZ (A 542)" target="AACHEN  - ROTHE ERDE (A 542)"><data key="A">A 542</data><data key="gewicht">1</data></edge>
 <edge source="AACHEN  - ROTHE ERDE (A 542)" target="AACHEN  - EUROPAPLATZ (A 542)"><data key="A">A 542</data><data key="gewicht">1</data></edge>
-<!-- <edge source="AACHEN  - ROTHE ERDE (A 542)" target="KREUZ WÜRSELEN"><data key="A">A 542</data><data key="gewicht">3</data></edge>
+<edge source="AACHEN  - ROTHE ERDE (A 542)" target="KREUZ WÜRSELEN"><data key="A">A 542</data><data key="gewicht">3</data></edge>
 <edge source="KREUZ WÜRSELEN" target="AACHEN  - ROTHE ERDE (A 542)"><data key="A">A 542</data><data key="gewicht">3</data></edge>
 <edge source="KREUZ WÜRSELEN" target="KREUZ AACHEN  (Westteil)"><data key="A">A 542</data><data key="gewicht">1</data></edge>
-<edge source="KREUZ AACHEN  (Westteil)" target="KREUZ WÜRSELEN"><data key="A">A 542</data><data key="gewicht">1</data></edge> -->
+<edge source="KREUZ AACHEN  (Westteil)" target="KREUZ WÜRSELEN"><data key="A">A 542</data><data key="gewicht">1</data></edge>
 <edge source="KREUZ AACHEN  (Westteil)" target="KREUZ AACHEN  (Ostteil)"><data key="A">A 542</data><data key="gewicht">0.5</data></edge>
 <edge source="KREUZ AACHEN  (Ostteil)" target="KREUZ AACHEN  (Westteil)"><data key="A">A 542</data><data key="gewicht">0.5</data></edge>
 <edge source="KREUZ BLIESHEIM" target="BRÜHL - SÜD (A 553)"><data key="A">A 553</data><data key="gewicht">4</data></edge>

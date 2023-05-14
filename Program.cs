@@ -1,5 +1,6 @@
 using backend;
 using graph_oo;
+using Microsoft.Extensions.FileProviders;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -30,10 +31,11 @@ app.UseCors(builder =>
            .AllowAnyHeader());
 
 app.UseDefaultFiles();
-app.UseStaticFiles(new StaticFileOptions
-{
-    // RequestPath = "wwwroot"
-}); 
+app.UseStaticFiles(new StaticFileOptions()); 
+app.UseStaticFiles(new StaticFileOptions() {
+        FileProvider =  new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "node_modules")),
+        RequestPath = new PathString("/node_modules")
+});
 
 app.MapControllers();
 

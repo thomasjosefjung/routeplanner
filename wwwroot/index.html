@@ -11,9 +11,8 @@
     <title>Pfadplanung</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- <link rel="stylesheet" href="styles/bulma.css"> -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <!-- <link rel="stylesheet" href="styles/main.css"> -->
+    <link rel="stylesheet" href="/node_modules/bulma/css/bulma.min.css">
+    <link rel="stylesheet" href="/node_modules/bulma-slider/dist/css/bulma-slider.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
@@ -35,6 +34,14 @@
                     <div class="select m-2">
                         <select id="select_to" onchange="trigger_search()" style="width: 100%;"></select>
                     </div>
+
+
+
+
+                    <div class="m-3">
+                        <h2 class="title is-4 m-2">Canvas Settings</h2>
+                        <input class="m-2 slider is-medium is-success is-fullwidth" step="1" min="0" max="10" value="5" type="range">
+                    </div>
                     <div>
                         <h2 class="title is-4 m-2">Algorithms</h2>
                         <div class="select m-2">
@@ -52,34 +59,34 @@
         </div>
         <div class="column is-3 ">
             <h2 class="title is-4 m-2">Die Route im Detail</h2>
-                <div class="m-2">
-                    <table class="table is-fullwidth">
-                        <tr>
-                            <td>
-                                <p class="is-size-7 has-text-right">Straight line distance: </p>
-                            </td>
-                            <td>
-                                <p class="is-size-7" id="textStraightLineDistance"> - </p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <p class="is-size-7 has-text-right">Route distance: </p>
-                            </td>
-                            <td>
-                                <p class="is-size-7" id="textRouteDistance"> - </p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <p class="is-size-7 has-text-right">Computation time:</p>
-                            </td>
-                            <td>
-                                <p class="is-size-7" id="textComputationTime"> - </p>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
+            <div class="m-2">
+                <table class="table is-fullwidth">
+                    <tr>
+                        <td>
+                            <p class="is-size-7 has-text-right">Straight line distance: </p>
+                        </td>
+                        <td>
+                            <p class="is-size-7" id="textStraightLineDistance"> - </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="is-size-7 has-text-right">Route distance: </p>
+                        </td>
+                        <td>
+                            <p class="is-size-7" id="textRouteDistance"> - </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="is-size-7 has-text-right">Computation time:</p>
+                        </td>
+                        <td>
+                            <p class="is-size-7" id="textComputationTime"> - </p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
             <div class="m-2">
                 <ul id="route_list" class="is-size-7"></ul>
             </div>

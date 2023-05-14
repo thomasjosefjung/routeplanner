@@ -85,6 +85,21 @@ public class Autobahnen
                     {
                         float weight = float.Parse(dataFieldElement.InnerText); 
                         var edge = new Edge(nodeFrom, nodeTo, weight); 
+
+                        if (edge.Weight > 100)
+                            continue; 
+
+                        var coordsFrom = mapCoordinates(nodeFrom.Longitude, nodeFrom.Latitude); 
+                        var coordsTo = mapCoordinates(nodeTo.Longitude, nodeTo.Latitude); 
+
+                        float dx = coordsTo.Item1 - coordsFrom.Item1; 
+                        float dy = coordsTo.Item2 - coordsFrom.Item2; 
+
+                        weight = (float)Math.Sqrt(dx*dx + dy*dy); 
+
+                        if (weight > 100)
+                            continue; 
+
                         graph.AddEdge(edge); 
                         nodeFrom.AddOutgoingEdge(edge); 
                     }
@@ -96,4 +111,10 @@ public class Autobahnen
 
         return graph; 
     }
+
+static internal (float,float) mapCoordinates(float x, float y) {
+    return (85.0f * (x - 5.0f), 1000.0f - (130.0f * (y - 47.0f)));
 }
+
+}
+

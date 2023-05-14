@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<graph id="Lehre">
+
+    <node id="Kiel">
+        <data key="lat">54.3098079</data>
+        <data key="lon">10.0639345</data>
+    </node>
+    <node id="Hamburg">
+        <data key="lat">53.5738738</data>
+        <data key="lon">9.8924923</data>
+    </node>
+    <node id="Hannover">
+        <data key="lat">52.4919186</data>
+        <data key="lon">9.8553663</data>
+    </node>
+    <node id="Köln">
+        <data key="lat">50.9953848</data>
+        <data key="lon">6.8860794</data>
+    </node>
+    <node id="Dortmund">
+        <data key="lat">51.5123322</data>
+        <data key="lon">7.6536428</data>
+    </node>
+    <node id="Stuttgart">
+        <data key="lat">48.72035</data>
+        <data key="lon">9.0789262</data>
+    </node>
+    <node id="München">
+        <data key="lat">48.1780012</data>
+        <data key="lon">11.437615</data>
+    </node>
+    <node id="Berlin">
+        <data key="lat">52.4990807</data>
+        <data key="lon">13.2812531</data>
+    </node>
+    <node id="Frankfurt">
+        <data key="lat">50.0523275</data>
+        <data key="lon">8.6211149</data>
+    </node>
+    <node id="Dresden">
+        <data key="lat">51.1394007</data>
+        <data key="lon">13.749776</data>
+    </node>
+
+    <edge source="Berlin" target="Hamburg">
+        <data key="A">A 3</data>
+        <data key="gewicht">289</data>
+    </edge>
+    <edge source="Berlin" target="Dresden">
+        <data key="A">A 3</data>
+        <data key="gewicht">192</data>
+    </edge>
+    <edge source="Berlin" target="Hannover">
+        <data key="A">A 3</data>
+        <data key="gewicht">285</data>
+    </edge>
+
+    <edge source="Dortmund" target="Hannover">
+        <data key="A">A 3</data>
+        <data key="gewicht">212</data>
+    </edge>
+    <edge source="Dortmund" target="Köln">
+        <data key="A">A 3</data>
+        <data key="gewicht">97</data>
+    </edge>
+
+    <edge source="Dresden" target="München">
+        <data key="A">A 3</data>
+        <data key="gewicht">460</data>
+    </edge>
+    <edge source="Dresden" target="Frankfurt">
+        <data key="A">A 3</data>
+        <data key="gewicht">465</data>
+    </edge>
+    <edge source="Dresden" target="Berlin">
+        <data key="A">A 3</data>
+        <data key="gewicht">192</data>
+    </edge>
+
+    <edge source="Frankfurt" target="Köln">
+        <data key="A">A 3</data>
+        <data key="gewicht">190</data>
+    </edge>
+    <edge source="Frankfurt" target="Stuttgart">
+        <data key="A">A 3</data>
+        <data key="gewicht">204</data>
+    </edge>
+    <edge source="Frankfurt" target="Dresden">
+        <data key="A">A 3</data>
+        <data key="gewicht">465</data>
+    </edge>
+
+    <edge source="Hamburg" target="Hannover">
+        <data key="A">A 3</data>
+        <data key="gewicht">163</data>
+    </edge>
+    <edge source="Hamburg" target="Kiel">
+        <data key="A">A 3</data>
+        <data key="gewicht">97</data>
+    </edge>
+    <edge source="Hamburg" target="Berlin">
+        <data key="A">A 3</data>
+        <data key="gewicht">289</data>
+    </edge>
+
+    <edge source="Hannover" target="Hamburg">
+        <data key="A">A 3</data>
+        <data key="gewicht">163</data>
+    </edge>
+    <edge source="Hannover" target="Dortmund">
+        <data key="A">A 3</data>
+        <data key="gewicht">212</data>
+    </edge>
+    <edge source="Hannover" target="Berlin">
+        <data key="A">A 3</data>
+        <data key="gewicht">285</data>
+    </edge>
+
+    <edge source="Kiel" target="Hamburg">
+        <data key="A">A 3</data>
+        <data key="gewicht">97</data>
+    </edge>
+
+    <edge source="Köln" target="Dortmund">
+        <data key="A">A 3</data>
+        <data key="gewicht">97</data>
+    </edge>
+    <edge source="Köln" target="Frankfurt">
+        <data key="A">A 3</data>
+        <data key="gewicht">190</data>
+    </edge>
+
+    <edge source="München" target="Stuttgart">
+        <data key="A">A 3</data>
+        <data key="gewicht">232</data>
+    </edge>
+    <edge source="München" target="Dresden">
+        <data key="A">A 3</data>
+        <data key="gewicht">460</data>
+    </edge>
+
+    <edge source="Stuttgart" target="Frankfurt">
+        <data key="A">A 3</data>
+        <data key="gewicht">204</data>
+    </edge>
+    <edge source="Stuttgart" target="München">
+        <data key="A">A 3</data>
+        <data key="gewicht">232</data>
+    </edge>
+
+
+</graph>

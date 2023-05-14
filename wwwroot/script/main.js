@@ -59,9 +59,9 @@ function draw() {
         let [dx, dy] = [coordsTo[0] - coordsFrom[0], coordsTo[1] - coordsFrom[1]];
         let length = Math.sqrt(dx * dx + dy * dy);
 
-        if (length > 100) {
-            continue;
-        }
+        // if (length > 100) {
+        //     continue;
+        // }
 
         ctx.moveTo(coordsFrom[0], coordsFrom[1]);
         ctx.lineTo(coordsTo[0], coordsTo[1]);
