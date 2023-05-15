@@ -36,6 +36,11 @@ namespace graph_oo
                     return ReconstructPath(cameFrom, current);
                 }
 
+                if (current == null)
+                {
+                    return new List<Edge>();                    
+                }
+
                 openSet.Remove(current);
                 closedSet.Add(current);
 

@@ -14,6 +14,7 @@ public class Autobahnen
             if (_babsGraph is null)
             {
                 _babsGraph = Read("graph_bab.xml"); 
+                // _babsGraph = Read("graph_teaching.xml"); 
             }
 
             return _babsGraph; 

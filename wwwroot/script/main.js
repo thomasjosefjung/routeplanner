@@ -1,3 +1,8 @@
+// import { bulmaSlider } from "/node_modules/bulma-slider/dist/js/bulma-slider.js";
+// bulma_slider.Attach(); 
+
+// const { bulmaSlider } = require("bulma-slider");
+
 let nodes = [];
 let edges = [];
 let route = new Object();
@@ -73,8 +78,9 @@ function draw() {
     for (let i = 0; i < nodes.length; i++) {
         let obj = nodes[i];
 
-        drawFilledCircle(ctx, obj.coordinates.x, obj.coordinates.y, 1, 'black');
+        let circleRad = document.getElementById("sliderNodeSize").value; 
 
+        drawFilledCircle(ctx, obj.coordinates.x, obj.coordinates.y, circleRad, 'black');
     }
 
     ctx.save();
@@ -103,6 +109,8 @@ function draw() {
 }
 
 async function initialize() {
+    bulmaSlider.attach(); 
+
     let response = await fetch('/api/Edges');
     edges = await response.json();
 
@@ -113,6 +121,8 @@ async function initialize() {
 
     draw();
 }
+
+window.initialize = initialize; 
 
 async function trigger_search() {
     let selectFrom = document.getElementById('select_from');
