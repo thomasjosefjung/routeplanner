@@ -73,14 +73,12 @@ function draw() {
         ctx.stroke();
     }
 
-    ctx.strokeStyle = 'black';
-
     for (let i = 0; i < nodes.length; i++) {
         let obj = nodes[i];
 
         let circleRad = document.getElementById("sliderNodeSize").value; 
 
-        drawFilledCircle(ctx, obj.coordinates.x, obj.coordinates.y, circleRad, 'black');
+        drawFilledCircle(ctx, obj.coordinates.x, obj.coordinates.y, circleRad, '#333333');
     }
 
     ctx.save();
@@ -122,8 +120,6 @@ async function initialize() {
     draw();
 }
 
-window.initialize = initialize; 
-
 async function trigger_search() {
     let selectFrom = document.getElementById('select_from');
     let selectTo = document.getElementById('select_to');
@@ -141,11 +137,28 @@ async function trigger_search() {
     writeRoute();
 }
 
+function showSettings(show)
+{
+    let dialog = document.getElementById("divSettings"); 
+    if (show)
+    {
+        dialog.classList.add("is-active"); 
+    }
+    else
+    {
+        dialog.classList.remove("is-active"); 
+    }
+}
+
+
+
 function mapCoordinates(x, y) {
     return [85 * (x - 5.0), 1000 - (130 * (y - 47))];
 }
 
 function drawFilledCircle(ctx, x, y, size, color) {
+    ctx.strokeStyle = color;
+
     ctx.beginPath(); // Beginnen Sie einen neuen Zeichenpfad
 
     [x, y] = mapCoordinates(x, y);
