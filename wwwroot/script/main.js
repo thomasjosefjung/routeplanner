@@ -52,6 +52,15 @@ function draw() {
     var ctx = canv.getContext("2d");
     ctx.clearRect(0, 0, canv.width, canv.height);
 
+    let cbDrawMap = document.getElementById("cbDrawMap");
+    if (cbDrawMap.checked)
+    {
+        let img = document.getElementById("deutschland_map");
+        ctx.drawImage(img, 50, -20, 820, 1000);
+        ctx.fillStyle = '#FFFFFFAA';
+        ctx.fillRect(0, 0, 1000, 1000);
+    }
+
     ctx.strokeStyle = 'lightgray';
 
     for (let i = 0; i < edges.length; i++) {
