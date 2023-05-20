@@ -1,4 +1,4 @@
-namespace graph_oo;
+namespace graph;
 
 public class Dijkstra
 {

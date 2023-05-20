@@ -1,4 +1,4 @@
-using graph_oo;
+using graph;
 
 namespace backend.models;
 

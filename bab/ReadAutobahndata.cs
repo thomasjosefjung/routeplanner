@@ -1,6 +1,6 @@
 using System.Globalization;
 using System.Xml;
-using graph_oo;
+using graph;
 
 namespace backend.bab;
 
@@ -26,9 +26,9 @@ public class Autobahnen
     }
 
 
-    public static graph_oo.Graph Read(string filename)
+    public static graph.Graph Read(string filename)
     {
-        var graph = new graph_oo.Graph(); 
+        var graph = new graph.Graph(); 
 
         XmlDocument doc = new XmlDocument();
         doc.Load(filename);

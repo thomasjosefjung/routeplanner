@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace graph_oo
+namespace graph
 {
     public class AStar
     {

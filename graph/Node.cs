@@ -2,7 +2,7 @@ using System.Numerics;
 
 using System.Text.Json.Serialization;
 
-namespace graph_oo;
+namespace graph;
 
 
 
