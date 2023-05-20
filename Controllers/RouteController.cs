@@ -23,21 +23,23 @@ public class RouteController : ControllerBase
 
         var started = DateTime.Now;
         var path = new List<Edge>();
+        var touchedNodes = new HashSet<Node>();
 
         switch (algo)
         {
             case ("astar"):
                 {
-                    path = AStar.FindShortestPath(
+                    (path, touchedNodes) = AStar.FindShortestPath(
                         Autobahnen.Graph, nodeFrom, nodeTo);
+
                     break;
                 }
             default:
                 {
-                    path = Dijkstra.FindShortestPath(
+                    (path, touchedNodes) = Dijkstra.FindShortestPath(
                        Autobahnen.Graph, nodeFrom, nodeTo);
 
-                    break; 
+                    break;
                 }
         }
 
@@ -74,6 +76,12 @@ public class RouteController : ControllerBase
         {
             Nodes = nodes,
             Edges = edges,
+            TouchedNodes = touchedNodes.Select(node =>
+            {
+                return new models.Node(
+                    node.Name,
+                    new models.Coordinates(node.Longitude, node.Latitude));
+            }),
             StraightLineDistance = linearDistance,
             RouteDistance = routeDistance,
             ComputationTime = (float)computationTime

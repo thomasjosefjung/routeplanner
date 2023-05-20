@@ -1,3 +1,5 @@
+using System.Text.Json.Serialization;
+
 namespace graph_oo;
 
 public class Edge

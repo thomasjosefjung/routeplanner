@@ -5,7 +5,7 @@ namespace graph_oo
 {
     public class AStar
     {
-        public static List<Edge>? FindShortestPath(Graph graph, Node start, Node goal)
+        public static (List<Edge>, HashSet<Node>) FindShortestPath(Graph graph, Node start, Node goal)
         {
             var closedSet = new HashSet<Node>();
             var openSet = new HashSet<Node> { start };
@@ -16,6 +16,8 @@ namespace graph_oo
             // Initialize start node
             gScore[start] = 0;
             fScore[start] = start.GetDistanceTo(goal);
+
+            var touchedNodes = new HashSet<Node>(); 
 
             while (openSet.Count > 0)
             {
@@ -31,14 +33,17 @@ namespace graph_oo
                     }
                 }
 
+                touchedNodes.Add(current); 
+
                 if (current == goal)
                 {
-                    return ReconstructPath(cameFrom, current);
+                    var path = ReconstructPath(cameFrom, current);
+                    return (path, touchedNodes); 
                 }
 
                 if (current == null)
                 {
-                    return new List<Edge>();                    
+                    return (new List<Edge>(), touchedNodes); 
                 }
 
                 openSet.Remove(current);
@@ -81,7 +86,7 @@ namespace graph_oo
             }
 
             // No path found
-            return new List<Edge>();
+            return (new List<Edge>(), touchedNodes); 
         }
 
         private static List<Edge> ReconstructPath(Dictionary<Node, Edge> cameFrom, Node current)

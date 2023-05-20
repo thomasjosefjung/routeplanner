@@ -45,8 +45,14 @@
                     </div>
                     <div class="block">
                         <label class="checkbox p-3">
-                            <input type="checkbox" checked id="cbDrawMap" onchange="draw();">
+                            <input type="checkbox" id="cbDrawMap" onchange="draw();">
                             Draw Background Map
+                        </label>
+                    </div>
+                    <div class="block">
+                        <label class="checkbox p-3">
+                            <input type="checkbox" id="cbShowTouchedNodes" onchange="draw();">
+                            Show all touched nodes
                         </label>
                     </div>
                     <div class="p-5">
@@ -77,6 +83,14 @@
                         </td>
                         <td>
                             <p class="is-size-7" id="textRouteDistance"> - </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="is-size-7 has-text-right">Touched nodes: </p>
+                        </td>
+                        <td>
+                            <p class="is-size-7" id="textTouchedNodes"> - </p>
                         </td>
                     </tr>
                     <tr>

@@ -82,12 +82,22 @@ function draw() {
         ctx.stroke();
     }
 
+    ctx.lineWidth = 1;
+
+    let circleRad = parseInt(document.getElementById("sliderNodeSize").value); 
+
     for (let i = 0; i < nodes.length; i++) {
         let obj = nodes[i];
 
-        let circleRad = document.getElementById("sliderNodeSize").value; 
+        drawFilledCircle(ctx, obj.coordinates.x, obj.coordinates.y, circleRad, '#555555');
+    }
 
-        drawFilledCircle(ctx, obj.coordinates.x, obj.coordinates.y, circleRad, '#333333');
+    if (document.getElementById("cbShowTouchedNodes").checked)
+    {
+        for (let i = 0; i < route.touchedNodes.length; i++) {
+            let obj = route.touchedNodes[i];
+            drawFilledCircle(ctx, obj.coordinates.x, obj.coordinates.y, circleRad+1, '#FF0000');
+        }    
     }
 
     ctx.save();
@@ -140,6 +150,7 @@ async function trigger_search() {
 
     document.getElementById("textStraightLineDistance").innerText = route.straightLineDistance+ " km"; 
     document.getElementById("textRouteDistance").innerText = route.routeDistance +" km"; 
+    document.getElementById("textTouchedNodes").innerText = route.touchedNodes.length; 
     document.getElementById("textComputationTime").innerText = route.computationTime + " ms"; 
 
     draw();

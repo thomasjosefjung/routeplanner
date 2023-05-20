@@ -1,17 +1,9 @@
+using System.Text.Json.Serialization;
+
 namespace graph_oo;
 
 public class Graph
 {
-    // public List<Node> GetNodesFlatClone()
-    // {
-    //     return new List<Node>(_nodes.Values); 
-    // }
-
-    // public List<Edge> GetEdgesFlatClone()
-    // {
-    //     return new List<Edge>(_edges); 
-    // }
-
     public Node FindNode(string id)
     {
         return _nodes[id]; 
@@ -21,11 +13,19 @@ public class Graph
     public IEnumerable<Node> Nodes
     {
         get => _nodes.Values;
+        set
+        {
+            foreach(Node n in value)
+            {
+                this.AddNode(n); 
+            }
+        }
     }
     private List<Edge> _edges = new List<Edge>();
     public IEnumerable<Edge> Edges
     {
         get => _edges;
+        set => _edges = value.ToList(); 
     }
 
     public void AddNode(Node node)
@@ -37,4 +37,23 @@ public class Graph
     {
         _edges.Add(edge);
     }
+
+    public void WriteToFile(string filename)
+    {
+        File.WriteAllText(filename, System.Text.Json.JsonSerializer.Serialize(this)); 
+    }
+
+    public static Graph FromJsonFile(string filename)
+    {
+        string json = File.ReadAllText(filename); 
+        return System.Text.Json.JsonSerializer.Deserialize<Graph>(json); 
+    }
+
+    // private void CompileOutgoingEdges()
+    // {
+    //     foreach(var e in Edges)
+    //     {
+    //         var nodeFrom = Nodes[e.From]
+    //     }
+    // }
 }

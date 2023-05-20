@@ -2,7 +2,7 @@ namespace graph_oo;
 
 public class Dijkstra
 {
-    public static List<Edge> FindShortestPath(
+    public static (List<Edge>, HashSet<Node>) FindShortestPath(
         Graph graph,
         Node from,
         Node To)
@@ -20,10 +20,13 @@ public class Dijkstra
 
         bool foundTarget = false; 
 
+        var touchedNodes = new HashSet<Node>(); 
+
         while (distanceMap.Count > 0 && !foundTarget)
         {
             (Node node, float dist) = GetLeastDistanceNode(distanceMap);
             distanceMap.Remove(node);
+            touchedNodes.Add(node); 
 
             foreach (var edge in node.OutgoingEdges)
             {
@@ -55,7 +58,7 @@ public class Dijkstra
             next = predecessor[next.From]; 
         }
 
-        return result;
+        return (result, touchedNodes);
     }
 
     static (Node, float) GetLeastDistanceNode(Dictionary<Node, float> distanceMap)

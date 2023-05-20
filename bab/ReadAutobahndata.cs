@@ -15,11 +15,16 @@ public class Autobahnen
             {
                 _babsGraph = Read("graph_bab.xml"); 
                 // _babsGraph = Read("graph_teaching.xml"); 
+
+                // _babsGraph = Graph.FromJsonFile("graph_bab.json"); 
+
+                // _babsGraph.WriteToFile("graph_bab.json"); 
             }
 
             return _babsGraph; 
         }
     }
+
 
     public static graph_oo.Graph Read(string filename)
     {
