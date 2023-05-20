@@ -128,10 +128,10 @@ function draw() {
 async function initialize() {
     bulmaSlider.attach(); 
 
-    let response = await fetch('/api/Edges');
+    let response = await fetch('./api/Edges');
     edges = await response.json();
 
-    response = await fetch('/api/Nodes');
+    response = await fetch('./api/Nodes');
     nodes = await response.json();
 
     fillDropdowns(); 
