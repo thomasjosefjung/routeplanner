@@ -13,8 +13,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="./node_modules/bulma/css/bulma.min.css">
     <link rel="stylesheet" href="./node_modules/bulma-slider/dist/css/bulma-slider.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="./node_modules/font-awesome/css/font-awesome.css"> -->
 </head>
+
 
 <body onload="initialize()">
 
@@ -22,21 +23,22 @@
     <div class="has-background-info">
         <h1 class="title is-3 mb-3 has-text-centered p-3 has-text-white">DHBW - BAB Routenplaner</h1>
     </div>
-
-    <div class="columns">
-        <div class="column is-3">
+    <div class="columns p-3">
+        <div class="column is-3 m-3">
             <div class="columns">
-                <div class="column is-full mr-4">
-                    <h2 class="title is-4 m-2">Start und Ziel</h2>
-                    <div class="select m-2 is-fullwidth">
-                        <select id="select_from" onchange="trigger_search()"></select>
-                    </div>
-                    <div class="select m-2 is-fullwidth">
-                        <select id="select_to" onchange="trigger_search()"></select>
+                <div class="column is-full">
+                    <div class="block">
+                        <h2 class="title is-4">Start und Ziel</h2>
+                        <div class="select is-fullwidth">
+                            <select id="select_from" onchange="trigger_search()"></select>
+                        </div>
+                        <div class="select is-fullwidth">
+                            <select id="select_to" onchange="trigger_search()"></select>
+                        </div>
                     </div>
                     <div class="block">
-                        <h2 class="title is-4 m-2 mt-5">Algorithms</h2>
-                        <div class="select m-2 is-fullwidth">
+                        <h2 class="title is-4">Algorithmen</h2>
+                        <div class="select is-fullwidth">
                             <select id="select_algo" onchange="trigger_search()">
                                 <option value="dijkstra">Dijkstra</option>
                                 <option value="astar">A*</option>
@@ -44,20 +46,20 @@
                         </div>
                     </div>
                     <div class="block">
-                        <label class="checkbox p-3">
+                        <label class="checkbox">
                             <input type="checkbox" id="cbDrawMap" onchange="draw();">
                             Draw Background Map
                         </label>
                     </div>
                     <div class="block">
-                        <label class="checkbox p-3">
+                        <label class="checkbox">
                             <input type="checkbox" id="cbShowTouchedNodes" onchange="draw();">
                             Show all touched nodes
                         </label>
                     </div>
-                    <div class="p-5">
+                    <div class="block">
                         <button class="button is-info is-small is-fullwidth"
-                            onclick="showSettings(true);">Settings</button>
+                            onclick="showSettings(true);">More Settings...</button>
                     </div>
                 </div>
             </div>
@@ -65,10 +67,10 @@
         <div class="column is-6">
             <canvas width="1000" height="1000" style="margin: 0px; padding: 0px; width: 100%;" id="canvas"></canvas>
         </div>
-        <div class="column is-3 ">
-            <h2 class="title is-4 m-2">Die Route im Detail</h2>
-            <div class="m-2">
-                <table class="table is-fullwidth">
+        <div class="column is-3 m-3 ">
+            <h2 class="title is-3">Die Route im Detail</h2>
+            <div>
+                <table class="table mx-4">
                     <tr>
                         <td>
                             <p class="is-size-7 has-text-right">Straight line distance: </p>
@@ -103,7 +105,7 @@
                     </tr>
                 </table>
             </div>
-            <div class="m-2">
+            <div class="">
                 <ul id="route_list" class="is-size-7"></ul>
             </div>
         </div>
@@ -121,7 +123,9 @@
                 <input id="sliderNodeSize" onchange="draw()" class="slider has-output is-info is-fullwidth" step="1"
                     min="1" max="5" value="1" type="range"></input>
                 <output for="sliderNodeSize">1</output>
-                <div>Sources: <a href="https://github.com/thomasjosefjung/routeplanner">github.com/thomasjosefjung/routeplanner</a></div>
+                <div>Sources: <a
+                        href="https://github.com/thomasjosefjung/routeplanner">github.com/thomasjosefjung/routeplanner</a>
+                </div>
             </section>
             <footer class="modal-card-foot">
                 <!-- <button class="button is-success">Save changes</button> -->
