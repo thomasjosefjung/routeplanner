@@ -21,9 +21,10 @@ public class RouteController : ControllerBase
         var nodeFrom = Autobahnen.Graph.FindNode(from);
         var nodeTo = Autobahnen.Graph.FindNode(to);
 
-        var started = DateTime.Now;
         var path = new List<Edge>();
         var touchedNodes = new HashSet<Node>();
+
+        var started = DateTime.Now;
 
         switch (algo)
         {
@@ -42,7 +43,6 @@ public class RouteController : ControllerBase
                     break;
                 }
         }
-
 
         var computationTime = (DateTime.Now - started).TotalMilliseconds;
 
@@ -64,7 +64,7 @@ public class RouteController : ControllerBase
                 new models.Coordinates(edge.From.Longitude, edge.To.Latitude));
         });
 
-        nodes.Prepend(new models.Node(
+        nodes = nodes.Prepend(new models.Node(
                 nodeFrom.Name,
                 new models.Coordinates(nodeFrom.Longitude, nodeFrom.Latitude)));
 

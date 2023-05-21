@@ -16,6 +16,8 @@ public class Node
     internal float Distance { get; set; }
     internal Edge? Predecessor { get; set; }
 
+    internal float CurrentDistance { get; set; }
+
     private List<Edge> _outgoingEdges = new List<Edge>();
     [JsonIgnore]
     public IEnumerable<Edge> OutgoingEdges

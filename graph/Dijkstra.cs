@@ -7,94 +7,66 @@ public class Dijkstra
         Node from,
         Node To)
     {
-        Dictionary<Node, Edge?> predecessor = new Dictionary<Node, Edge?>();
-        Dictionary<Node, float> distanceMap = new Dictionary<Node, float>();
+        var unhandledNodes = new HashSet<Node>(); 
 
         foreach (var node in graph.Nodes)
         {
-            predecessor.Add(node, null);
-            distanceMap.Add(node, float.MaxValue);
+            node.Predecessor = null; 
+            unhandledNodes.Add(node); 
+            node.CurrentDistance = float.MaxValue; 
         }
 
-        distanceMap[from] = 0.0f; 
-
-        bool foundTarget = false; 
+        from.CurrentDistance = 0.0f; 
 
         var touchedNodes = new HashSet<Node>(); 
 
-        while (distanceMap.Count > 0 && !foundTarget)
+        while (unhandledNodes.Count > 0)
         {
-            (Node node, float dist) = GetLeastDistanceNode(distanceMap);
-            distanceMap.Remove(node);
+            var node = GetLeastDistanceNode(unhandledNodes); 
+            unhandledNodes.Remove(node); 
+
             touchedNodes.Add(node); 
+
+            if (node == To)
+            {
+                break; 
+            }
 
             foreach (var edge in node.OutgoingEdges)
             {
-                if (distanceMap.ContainsKey(edge.To))
+                if (unhandledNodes.Contains(edge.To))
                 {
-                    float abstandUeberDiesenWeg = dist + edge.Weight; 
+                    float distanceCandidate = node.CurrentDistance + edge.Weight; 
 
-                    if (abstandUeberDiesenWeg < distanceMap[edge.To])
+                    if (distanceCandidate < edge.To.CurrentDistance)
                     {
-                        predecessor[edge.To] = edge; 
-                        distanceMap[edge.To] = dist + edge.Weight; 
-                    }
+                        // predecessor[edge.To] = edge; 
+                        edge.To.Predecessor = edge; 
 
-                    if (edge.To == To)
-                    {
-                        foundTarget = true; 
+                        // distanceMap[edge.To] = dist + edge.Weight; 
+                        edge.To.CurrentDistance = node.CurrentDistance + edge.Weight;
                     }
                 }
             }
         }
 
         var result = new List<Edge>();
-        Edge? next = predecessor[To];
+        var next = To.Predecessor; 
 
         // erstelle pfad: 
         while (next != null)
         {
-            result.Insert(0, next); 
-            next = predecessor[next.From]; 
+            result.Add(next); 
+            next = next.From.Predecessor; 
         }
+
+        result.Reverse(); 
 
         return (result, touchedNodes);
     }
 
-    static (Node, float) GetLeastDistanceNode(Dictionary<Node, float> distanceMap)
+    static Node GetLeastDistanceNode(HashSet<Node> unhandledNodes)
     {
-        Node? currentLeastNode = null;
-        float currentLeastDist = float.MaxValue;
-
-        foreach (var kvp in distanceMap)
-        {
-            if (kvp.Value <= currentLeastDist)
-            {
-                currentLeastNode = kvp.Key;
-                currentLeastDist = kvp.Value;
-            }
-        }
-
-        _ = currentLeastNode ?? throw new Exception();
-
-        return (currentLeastNode, currentLeastDist);
-    }
-}
-
-public class NodeComparer : IComparer<float>
-{
-    public int Compare(float prio1, float prio2)
-    {
-        if (prio1 < prio2)
-        {
-            return 1;
-        }
-
-        if (prio1 == prio2)
-        {
-            return 0;
-        }
-
-        return -1;
+        return unhandledNodes.MinBy<Node, float>((Node node) => node.CurrentDistance) ?? throw new Exception("cannot happen"); 
     }
 }
