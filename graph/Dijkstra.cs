@@ -56,11 +56,9 @@ public class Dijkstra
         // erstelle pfad: 
         while (next != null)
         {
-            result.Add(next); 
+            result.Insert(0,next); 
             next = next.From.Predecessor; 
         }
-
-        result.Reverse(); 
 
         return (result, touchedNodes);
     }
