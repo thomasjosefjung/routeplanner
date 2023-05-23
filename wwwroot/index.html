@@ -22,54 +22,52 @@
     <div class="has-background-info">
         <h1 class="title is-3 mb-3 has-text-centered p-3 has-text-white">DHBW - BAB Routenplaner</h1>
     </div>
-    <div class="columns p-3">
-        <div class="column is-3 m-3">
-            <div class="columns">
-                <div class="column is-full">
-                    <div class="block">
-                        <h2 class="title is-4">Start und Ziel</h2>
-                        <div class="select is-fullwidth">
-                            <select id="select_from" onchange="trigger_search()"></select>
-                        </div>
-                        <div class="select is-fullwidth">
-                            <select id="select_to" onchange="trigger_search()"></select>
-                        </div>
+    <div class="columns p-3 is-centered" style="max-width: 100%;">
+        <div class="column is-3">
+            <div class="box">
+                <div class="block">
+                    <h2 class="title is-4">Start und Ziel</h2>
+                    <div class="select is-fullwidth">
+                        <select id="select_from" onchange="trigger_search()"></select>
                     </div>
-                    <div class="block">
-                        <h2 class="title is-4">Algorithmen</h2>
-                        <div class="select is-fullwidth">
-                            <select id="select_algo" onchange="trigger_search()">
-                                <option value="dijkstra">Dijkstra</option>
-                                <option value="astar">A*</option>
-                            </select>
-                        </div>
+                    <div class="select is-fullwidth">
+                        <select id="select_to" onchange="trigger_search()"></select>
                     </div>
-                    <div class="block">
-                        <label class="checkbox">
-                            <input type="checkbox" id="cbDrawMap" onchange="draw();">
-                            Draw Background Map
-                        </label>
+                </div>
+                <div class="block">
+                    <h2 class="title is-4">Algorithmen</h2>
+                    <div class="select is-fullwidth">
+                        <select id="select_algo" onchange="trigger_search()">
+                            <option value="dijkstra">Dijkstra</option>
+                            <option value="astar">A*</option>
+                        </select>
                     </div>
-                    <div class="block">
-                        <label class="checkbox">
-                            <input type="checkbox" id="cbShowTouchedNodes" onchange="draw();">
-                            Show all touched nodes
-                        </label>
-                    </div>
-                    <div class="block">
-                        <button class="button is-info is-small is-fullwidth"
-                            onclick="showSettings(true);">More Settings...</button>
-                    </div>
+                </div>
+                <div class="block">
+                    <label class="checkbox">
+                        <input type="checkbox" id="cbDrawMap" onchange="draw();">
+                        Draw Background Map
+                    </label>
+                </div>
+                <div class="block">
+                    <label class="checkbox">
+                        <input type="checkbox" id="cbShowTouchedNodes" onchange="draw();">
+                        Show all touched nodes
+                    </label>
+                </div>
+                <div class="block">
+                    <button class="button is-info is-small is-fullwidth" onclick="showSettings(true);">More
+                        Settings...</button>
                 </div>
             </div>
         </div>
         <div class="column is-6">
             <canvas width="1000" height="1000" style="margin: 0px; padding: 0px; width: 100%;" id="canvas"></canvas>
         </div>
-        <div class="column is-3 m-3 ">
-            <h2 class="title is-3">Die Route im Detail</h2>
-            <div>
-                <table class="table mx-4">
+        <div class="column is-3 m-3">
+            <div class="box">
+                <h2 class="title is-3">Die Route im Detail</h2>
+                <table class="table mx-4 is-centered">
                     <tr>
                         <td>
                             <p class="is-size-7 has-text-right">Straight line distance: </p>
@@ -103,9 +101,9 @@
                         </td>
                     </tr>
                 </table>
-            </div>
-            <div class="">
-                <ul id="route_list" class="is-size-7"></ul>
+                <div class="content">
+                    <ul id="route_list" class="is-size-7"></ul>
+                </div>
             </div>
         </div>
     </div>
@@ -127,11 +125,9 @@
                 </div>
             </section>
             <footer class="modal-card-foot">
-                <!-- <button class="button is-success">Save changes</button> -->
                 <button class="button" onclick="showSettings(false);">Close</button>
             </footer>
         </div>
-        <!-- <button class="modal-close is-large" aria-label="close"></button> -->
     </div>
 
 
