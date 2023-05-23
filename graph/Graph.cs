@@ -4,18 +4,18 @@ namespace graph;
 
 public class Graph
 {
-    public Node FindNode(string id)
+    public Vertex FindNode(string id)
     {
         return _nodes[id]; 
     }
 
-    private Dictionary<string, Node> _nodes = new Dictionary<string, Node>();
-    public IEnumerable<Node> Nodes
+    private Dictionary<string, Vertex> _nodes = new Dictionary<string, Vertex>();
+    public IEnumerable<Vertex> Nodes
     {
         get => _nodes.Values;
         set
         {
-            foreach(Node n in value)
+            foreach(Vertex n in value)
             {
                 this.AddNode(n); 
             }
@@ -28,7 +28,7 @@ public class Graph
         set => _edges = value.ToList(); 
     }
 
-    public void AddNode(Node node)
+    public void AddNode(Vertex node)
     {
         _nodes.Add(node.Name, node);
     }

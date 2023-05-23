@@ -4,11 +4,11 @@ namespace graph;
 
 public class Edge
 {
-    public Node From { get; set; }
-    public Node To { get; set; }
+    public Vertex From { get; set; }
+    public Vertex To { get; set; }
     public float Weight { get; set; }
 
-    public Edge(Node from, Node to, float weight)
+    public Edge(Vertex from, Vertex to, float weight)
     {
         From = from;
         To = to;

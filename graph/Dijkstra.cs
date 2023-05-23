@@ -2,12 +2,12 @@ namespace graph;
 
 public class Dijkstra
 {
-    public static (List<Edge>, HashSet<Node>) FindShortestPath(
+    public static (List<Edge>, HashSet<Vertex>) FindShortestPath(
         Graph graph,
-        Node from,
-        Node To)
+        Vertex from,
+        Vertex To)
     {
-        var unhandledNodes = new HashSet<Node>(); 
+        var unhandledNodes = new HashSet<Vertex>(); 
 
         foreach (var node in graph.Nodes)
         {
@@ -18,7 +18,7 @@ public class Dijkstra
 
         from.CurrentDistance = 0.0f; 
 
-        var touchedNodes = new HashSet<Node>(); 
+        var touchedNodes = new HashSet<Vertex>(); 
 
         while (unhandledNodes.Count > 0)
         {
@@ -63,8 +63,8 @@ public class Dijkstra
         return (result, touchedNodes);
     }
 
-    static Node GetLeastDistanceNode(HashSet<Node> unhandledNodes)
+    static Vertex GetLeastDistanceNode(HashSet<Vertex> unhandledNodes)
     {
-        return unhandledNodes.MinBy<Node, float>((Node node) => node.CurrentDistance) ?? throw new Exception("cannot happen"); 
+        return unhandledNodes.MinBy<Vertex, float>((Vertex node) => node.CurrentDistance) ?? throw new Exception("cannot happen"); 
     }
 }

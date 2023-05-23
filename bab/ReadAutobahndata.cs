@@ -34,7 +34,7 @@ public class Autobahnen
         doc.Load(filename);
         Console.WriteLine(doc.Value);
 
-        Dictionary<string, Node> nodes = new Dictionary<string, Node>(); 
+        Dictionary<string, Vertex> nodes = new Dictionary<string, Vertex>(); 
 
         var xmlGraph = doc.ChildNodes[1];
         _ = xmlGraph ?? throw new NullReferenceException(); 
@@ -51,7 +51,7 @@ public class Autobahnen
                 if (nodes.ContainsKey(nodekey))
                     continue; 
 
-                Node node = new Node(nodekey); 
+                Vertex node = new Vertex(nodekey); 
                 nodes.Add(nodekey, node); 
                 graph.AddNode(node); 
 

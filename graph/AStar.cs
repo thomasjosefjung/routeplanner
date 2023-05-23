@@ -5,24 +5,24 @@ namespace graph
 {
     public class AStar
     {
-        public static (List<Edge>, HashSet<Node>) FindShortestPath(Graph graph, Node start, Node goal)
+        public static (List<Edge>, HashSet<Vertex>) FindShortestPath(Graph graph, Vertex start, Vertex goal)
         {
-            var closedSet = new HashSet<Node>();
-            var openSet = new HashSet<Node> { start };
-            var cameFrom = new Dictionary<Node, Edge>();
-            var gScore = new Dictionary<Node, float>();
-            var fScore = new Dictionary<Node, float>();
+            var closedSet = new HashSet<Vertex>();
+            var openSet = new HashSet<Vertex> { start };
+            var cameFrom = new Dictionary<Vertex, Edge>();
+            var gScore = new Dictionary<Vertex, float>();
+            var fScore = new Dictionary<Vertex, float>();
 
             // Initialize start node
             gScore[start] = 0;
             fScore[start] = start.GetDistanceTo(goal);
 
-            var touchedNodes = new HashSet<Node>(); 
+            var touchedNodes = new HashSet<Vertex>(); 
 
             while (openSet.Count > 0)
             {
                 // Get the node in openSet with lowest fScore
-                Node? current = null;
+                Vertex? current = null;
                 float lowestScore = float.MaxValue;
                 foreach (var node in openSet)
                 {
@@ -89,7 +89,7 @@ namespace graph
             return (new List<Edge>(), touchedNodes); 
         }
 
-        private static List<Edge> ReconstructPath(Dictionary<Node, Edge> cameFrom, Node current)
+        private static List<Edge> ReconstructPath(Dictionary<Vertex, Edge> cameFrom, Vertex current)
         {
             var path = new List<Edge> { };
 
