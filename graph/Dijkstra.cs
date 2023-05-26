@@ -2,7 +2,7 @@ namespace graph;
 
 public class Dijkstra
 {
-    public static (List<Edge>, HashSet<Vertex>) FindShortestPath(
+    public static (List<Edge>, IEnumerable<Vertex>) FindShortestPath(
         Graph graph,
         Vertex from,
         Vertex To)
@@ -18,7 +18,7 @@ public class Dijkstra
 
         from.CurrentDistance = 0.0f; 
 
-        var touchedNodes = new HashSet<Vertex>(); 
+        var touchedNodes = new List<Vertex>(); 
 
         while (unhandledNodes.Count > 0)
         {

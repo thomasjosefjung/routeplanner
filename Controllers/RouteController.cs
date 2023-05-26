@@ -22,7 +22,7 @@ public class RouteController : ControllerBase
         var nodeTo = Autobahnen.Graph.FindNode(to);
 
         var path = new List<Edge>();
-        var touchedNodes = new HashSet<Vertex>();
+        IEnumerable<Vertex> touchedNodes; 
 
         var started = DateTime.Now;
 
