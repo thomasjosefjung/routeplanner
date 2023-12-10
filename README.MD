@@ -10,7 +10,7 @@ Have fun!
 
 ## Link to the running App
 
-When this was written, the app was available at http://130.162.232.189/routeplanner/
+Currently running at http://150.230.148.31/routeplanner/ .
 
 ## Author
 Thomas Jung
