@@ -1,0 +1,11 @@
+[Unit]
+Description=routeplanner aus DHBW Demo Vortrag
+
+[Service]
+Type=simple
+ExecStart=/home/ubuntu/dev/routeplanner/bin/Debug/net7.0/publish/backend
+Restart=on-failure
+
+[Install]
+WantedBy=default.target
+
